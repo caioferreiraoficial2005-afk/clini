@@ -33,7 +33,7 @@ export function FeaturesSection() {
         >
           {/* Image left */}
           <div style={{ position: "relative" }}>
-            <div style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
+            <div className="section-image-left" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
                 src="/images/modo_paciente.jpg"
                 alt="Paciente sendo atendida pelo Clinisor"
@@ -161,7 +161,7 @@ export function FeaturesSection() {
 
           {/* Image right */}
           <div style={{ position: "relative" }}>
-            <div style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
+            <div className="section-image-right" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
                 src="/images/modo_psicologo.jpg"
                 alt="Psicóloga verificando notificações do Clinisor"

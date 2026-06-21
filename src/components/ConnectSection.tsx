@@ -77,7 +77,7 @@ export function ConnectSection() {
           {/* Right: image + glass card */}
           <div style={{ position: "relative" }}>
             {/* Image — square, very rounded */}
-            <div style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
+            <div className="section-image-right" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
                 src="/images/como_funciona.jpg"
                 alt="Psicóloga em atendimento enquanto Clinisor agenda outra consulta"
@@ -89,7 +89,7 @@ export function ConnectSection() {
 
             {/* Glass card — WhatsApp panel */}
             <div
-              className="glass-float glass-float-bl"
+              className="glass-float glass-float-bl connect-float-card"
               style={{
                 ...GLASS,
                 position: "absolute",

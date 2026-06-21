@@ -270,9 +270,9 @@ export function HeroSection() {
         </div>
 
         {/* Mobile hero — phone + floating cards */}
-        <div className="lg:hidden" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", marginTop: "2.5rem", gap: "1.25rem" }}>
+        <div className="lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem" }}>
           {/* Phone + overlapping cards */}
-          <div style={{ position: "relative", width: "58%", maxWidth: "210px" }}>
+          <div style={{ position: "relative", width: "90%", maxWidth: "400px" }}>
             <Image
               src="/images/mokup_telefone.png"
               alt="Assistente Clinisor no WhatsApp"
@@ -283,7 +283,7 @@ export function HeroSection() {
               unoptimized
             />
             {/* Nova paciente — top left overlay */}
-            <div style={{ ...GLASS, position: "absolute", top: "6%", left: "-38%", padding: "8px 10px", zIndex: 10, animation: "heroFloat1 4s ease-in-out infinite", minWidth: "140px" }}>
+            <div style={{ ...GLASS, position: "absolute", top: "6%", left: "-8%", padding: "8px 10px", zIndex: 10, animation: "heroFloat1 4s ease-in-out infinite", minWidth: "140px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                 <div style={{ width: "22px", height: "22px", borderRadius: "50%", backgroundColor: "rgba(34,197,94,0.15)", border: "1.5px solid rgba(34,197,94,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#22c55e" }}>
                   <MessageCircle size={11} strokeWidth={2} />
@@ -295,7 +295,7 @@ export function HeroSection() {
               </div>
             </div>
             {/* Stats — bottom right overlay */}
-            <div style={{ ...GLASS, position: "absolute", bottom: "14%", right: "-38%", padding: "10px 12px", zIndex: 10, animation: "heroFloat2 3.5s ease-in-out 0.5s infinite" }}>
+            <div style={{ ...GLASS, position: "absolute", bottom: "14%", right: "-8%", padding: "10px 12px", zIndex: 10, animation: "heroFloat2 3.5s ease-in-out 0.5s infinite" }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "8px", margin: "0 0 2px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Agendamentos</p>
               <p style={{ color: "#fff", fontSize: "20px", fontWeight: 800, margin: 0, lineHeight: 1 }}>+38%</p>
               <p style={{ color: "#22c55e", fontSize: "9px", margin: "2px 0 0 0" }}>↑ este mês</p>
