@@ -216,8 +216,8 @@ body {
 
 /* Reposition floating cards on mobile */
 @media (max-width: 900px) {
-  .glass-float-br { bottom: -15px !important; right: 8px !important; left: auto !important; top: auto !important; }
-  .glass-float-bl { bottom: -15px !important; left: 8px !important; right: auto !important; top: auto !important; }
+  .glass-float-br { bottom: -28px !important; right: 8px !important; left: auto !important; top: auto !important; }
+  .glass-float-bl { bottom: -28px !important; left: 8px !important; right: auto !important; top: auto !important; }
   .glass-float-tr { top: 10px !important; right: 10px !important; left: auto !important; bottom: auto !important; }
   .glass-float-tl { top: 10px !important; left: 10px !important; right: auto !important; bottom: auto !important; }
   .glass-float-br, .glass-float-bl, .glass-float-tr, .glass-float-tl {

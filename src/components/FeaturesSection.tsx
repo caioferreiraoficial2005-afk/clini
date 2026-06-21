@@ -119,11 +119,23 @@ export function FeaturesSection() {
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "12px 28px", fontSize: "0.9375rem", fontWeight: 700, textDecoration: "none" }}
+              className="hidden md:inline-flex items-center justify-center font-bold"
+              style={{ backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "12px 28px", fontSize: "0.9375rem", textDecoration: "none" }}
             >
               Quero começar
             </a>
           </div>
+
+          {/* Mobile CTA Modo Paciente */}
+          <a
+            href={CTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden flex items-center justify-center font-bold"
+            style={{ gridColumn: "1 / -1", backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "14px 28px", fontSize: "0.9375rem", textDecoration: "none", marginTop: "-1rem" }}
+          >
+            Quero atender 24h por dia
+          </a>
         </div>
 
         {/* ── Modo Psicólogo: texto esquerda, imagem direita ── */}
@@ -153,7 +165,8 @@ export function FeaturesSection() {
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "12px 28px", fontSize: "0.9375rem", fontWeight: 700, textDecoration: "none" }}
+              className="hidden md:inline-flex items-center justify-center font-bold"
+              style={{ backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "12px 28px", fontSize: "0.9375rem", textDecoration: "none" }}
             >
               Quero começar
             </a>
@@ -240,6 +253,17 @@ export function FeaturesSection() {
               </div>
             </div>
           </div>
+
+          {/* Mobile CTA Modo Psicólogo */}
+          <a
+            href={CTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden flex items-center justify-center font-bold"
+            style={{ gridColumn: "1 / -1", backgroundColor: "#fff", color: "#09090b", borderRadius: "100vw", padding: "14px 28px", fontSize: "0.9375rem", textDecoration: "none", marginTop: "-1rem" }}
+          >
+            Começar gratuitamente
+          </a>
         </div>
 
       </div>

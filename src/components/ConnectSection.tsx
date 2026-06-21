@@ -63,11 +63,13 @@ export function ConnectSection() {
 
             <a
               href={CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center justify-center font-bold"
               style={{
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
                 backgroundColor: "#fff", color: "#09090b",
                 borderRadius: "100vw", padding: "12px 28px",
-                fontSize: "0.9375rem", fontWeight: 700, textDecoration: "none",
+                fontSize: "0.9375rem", textDecoration: "none",
               }}
             >
               Quero começar
@@ -126,6 +128,23 @@ export function ConnectSection() {
               </div>
             </div>
           </div>
+
+          {/* Mobile CTA — shown only on mobile, below image */}
+          <a
+            href={CTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden flex items-center justify-center font-bold"
+            style={{
+              gridColumn: "1 / -1",
+              backgroundColor: "#fff", color: "#09090b",
+              borderRadius: "100vw", padding: "14px 28px",
+              fontSize: "0.9375rem", textDecoration: "none",
+              marginTop: "-1rem",
+            }}
+          >
+            Quero meu diagnóstico gratuito
+          </a>
         </div>
       </div>
     </section>

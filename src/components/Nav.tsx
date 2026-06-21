@@ -30,8 +30,8 @@ export function Nav() {
       </a>
 
       <header
-        className="fixed inset-x-0 top-0 z-50 flex h-[7rem] items-start"
-        style={{ backgroundColor: "#09090b", overflow: "visible", paddingTop: "22px" }}
+        className="fixed inset-x-0 top-0 z-50 flex h-[7rem] items-start md:bg-[#09090b]"
+        style={{ overflow: "visible", paddingTop: "22px" }}
       >
         <div className="mx-auto w-full max-w-screen-xl px-4">
           {/* Desktop pill nav */}
