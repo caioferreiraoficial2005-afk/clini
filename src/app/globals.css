@@ -205,31 +205,38 @@ body {
 /* Mobile image alignment — zigzag effect (image shifts to its intended side) */
 @media (max-width: 900px) {
   .section-image-right {
-    max-width: 72% !important;
+    max-width: 80% !important;
     margin-inline: auto 0 !important;
   }
   .section-image-left {
-    max-width: 72% !important;
+    max-width: 80% !important;
     margin-inline: 0 auto !important;
   }
 }
 
-/* Reposition floating cards on mobile (keep visible but inside image bounds) */
+/* Reposition floating cards on mobile */
 @media (max-width: 900px) {
-  .glass-float-br { bottom: 3px !important; right: 8px !important; left: auto !important; top: auto !important; }
-  .glass-float-bl { bottom: 3px !important; left: 8px !important; right: auto !important; top: auto !important; }
+  .glass-float-br { bottom: -15px !important; right: 8px !important; left: auto !important; top: auto !important; }
+  .glass-float-bl { bottom: -15px !important; left: 8px !important; right: auto !important; top: auto !important; }
   .glass-float-tr { top: 10px !important; right: 10px !important; left: auto !important; bottom: auto !important; }
   .glass-float-tl { top: 10px !important; left: 10px !important; right: auto !important; bottom: auto !important; }
   .glass-float-br, .glass-float-bl, .glass-float-tr, .glass-float-tl {
     min-width: 0 !important;
-    max-width: min(88%, 270px) !important;
+    max-width: min(82%, 240px) !important;
     font-size: 10px;
   }
+  /* ConnectSection floating card — menor */
   .connect-float-card {
-    max-width: min(78%, 210px) !important;
-    padding: 10px 12px !important;
-    font-size: 9.5px;
+    max-width: min(70%, 185px) !important;
+    padding: 8px 10px !important;
   }
+  .connect-float-card p { font-size: 9px !important; }
+  /* Modo Paciente e Psicólogo — cards menores */
+  .paciente-respondido, .psicologo-novos-contatos {
+    max-width: min(78%, 225px) !important;
+    padding: 12px 14px !important;
+  }
+  .paciente-respondido p, .psicologo-novos-contatos p { font-size: 9.5px !important; }
   .mobile-text-first { order: -1 !important; }
 }
 @media (max-width: 640px) {

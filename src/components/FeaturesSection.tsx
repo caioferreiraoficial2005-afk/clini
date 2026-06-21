@@ -45,7 +45,7 @@ export function FeaturesSection() {
 
             {/* Glass card — chat */}
             <div
-              className="glass-float glass-float-br"
+              className="glass-float glass-float-br paciente-respondido"
               style={{
                 ...GLASS,
                 position: "absolute",
@@ -173,7 +173,7 @@ export function FeaturesSection() {
 
             {/* Glass card — lead panel */}
             <div
-              className="glass-float glass-float-bl"
+              className="glass-float glass-float-bl psicologo-novos-contatos"
               style={{
                 ...GLASS,
                 position: "absolute",
