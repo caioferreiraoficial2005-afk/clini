@@ -1,9 +1,29 @@
+import { Nav } from "@/components/Nav";
+import { HeroSection } from "@/components/HeroSection";
+import { ConnectSection } from "@/components/ConnectSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { SecuritySection } from "@/components/SecuritySection";
+import { PricingSection } from "@/components/PricingSection";
+import { FaqSection } from "@/components/FaqSection";
+import { PressSection } from "@/components/PressSection";
+import { CtaSection } from "@/components/CtaSection";
+import { Footer } from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <div style={{ backgroundColor: "#09090b", minHeight: "100vh" }}>
+      <Nav />
+      <main id="main-content">
+        <HeroSection />
+        <ConnectSection />
+        <FeaturesSection />
+        <SecuritySection />
+        <PressSection />
+        <PricingSection />
+        <FaqSection />
+        <CtaSection />
+      </main>
+      <Footer />
+    </div>
   );
 }
