@@ -138,9 +138,9 @@ export function ConnectSection() {
             style={{
               gridColumn: "1 / -1",
               backgroundColor: "#fff", color: "#09090b",
-              borderRadius: "100vw", padding: "14px 28px",
-              fontSize: "0.9375rem", textDecoration: "none",
-              marginTop: "-1rem",
+              borderRadius: "100vw", padding: "10px 22px",
+              fontSize: "0.875rem", textDecoration: "none",
+              marginTop: "1.5rem",
             }}
           >
             Quero meu diagnóstico gratuito

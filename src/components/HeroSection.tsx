@@ -302,16 +302,6 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Consulta agendada card — overlaps bottom of phone, animated */}
-          <div style={{ ...GLASS, width: "82%", maxWidth: "320px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "10px", marginTop: "-32px", position: "relative", zIndex: 20, animation: "heroFloat3 5s ease-in-out 2s infinite" }}>
-            <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: `${BRAND_BLUE}18`, border: `1.5px solid ${BRAND_BLUE}40`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: BRAND_BLUE }}>
-              <CalendarCheck size={14} strokeWidth={2} />
-            </div>
-            <div>
-              <p style={{ color: "#fff", fontSize: "12px", fontWeight: 700, margin: 0 }}>Consulta agendada</p>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "10.5px", margin: 0 }}>Ter, 24/06 às 10h · confirmada ✓</p>
-            </div>
-          </div>
         </div>
 
         <div style={{ paddingBottom: "60px" }} />
