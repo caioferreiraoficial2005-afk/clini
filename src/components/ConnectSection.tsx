@@ -89,7 +89,7 @@ export function ConnectSection() {
 
             {/* Glass card — WhatsApp panel */}
             <div
-              className="glass-float"
+              className="glass-float glass-float-bl"
               style={{
                 ...GLASS,
                 position: "absolute",

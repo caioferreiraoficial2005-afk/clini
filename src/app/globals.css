@@ -202,9 +202,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide floating glass cards on mobile to prevent overflow */
+/* Reposition floating cards on mobile (keep visible but inside image bounds) */
+@media (max-width: 900px) {
+  .glass-float-br { bottom: 10px !important; right: 10px !important; left: auto !important; top: auto !important; }
+  .glass-float-bl { bottom: 10px !important; left: 10px !important; right: auto !important; top: auto !important; }
+  .glass-float-tr { top: 10px !important; right: 10px !important; left: auto !important; bottom: auto !important; }
+  .glass-float-tl { top: 10px !important; left: 10px !important; right: auto !important; bottom: auto !important; }
+  .glass-float-br, .glass-float-bl, .glass-float-tr, .glass-float-tl {
+    min-width: 0 !important;
+    max-width: min(88%, 270px) !important;
+    font-size: 10px;
+  }
+  .mobile-text-first { order: -1 !important; }
+}
 @media (max-width: 640px) {
-  .glass-float { display: none !important; }
   .diff-grid { grid-template-columns: 1fr !important; }
   .press-grid { grid-template-columns: 1fr !important; }
 }

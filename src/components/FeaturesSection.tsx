@@ -45,7 +45,7 @@ export function FeaturesSection() {
 
             {/* Glass card — chat */}
             <div
-              className="glass-float"
+              className="glass-float glass-float-br"
               style={{
                 ...GLASS,
                 position: "absolute",
@@ -77,7 +77,7 @@ export function FeaturesSection() {
 
             {/* Badge top-left */}
             <div
-              className="glass-float"
+              className="glass-float glass-float-tl"
               style={{
                 ...GLASS,
                 position: "absolute",
@@ -102,7 +102,7 @@ export function FeaturesSection() {
           </div>
 
           {/* Text right */}
-          <div>
+          <div className="mobile-text-first">
             <span style={{ display: "inline-block", backgroundColor: `${BRAND_BLUE}18`, color: BRAND_BLUE, fontSize: "12px", fontWeight: 700, borderRadius: "100vw", padding: "4px 14px", letterSpacing: "0.05em", textTransform: "uppercase" as const, marginBottom: "1.25rem" }}>
               Modo Paciente
             </span>
@@ -173,7 +173,7 @@ export function FeaturesSection() {
 
             {/* Glass card — lead panel */}
             <div
-              className="glass-float"
+              className="glass-float glass-float-bl"
               style={{
                 ...GLASS,
                 position: "absolute",
@@ -218,7 +218,7 @@ export function FeaturesSection() {
 
             {/* Bell badge top-right */}
             <div
-              className="glass-float"
+              className="glass-float glass-float-tr"
               style={{
                 ...GLASS,
                 position: "absolute",

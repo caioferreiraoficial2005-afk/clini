@@ -95,27 +95,38 @@ export function Nav() {
           </nav>
 
           {/* Mobile nav bar */}
-          <div className="flex md:hidden items-center justify-between w-full px-1">
-            <Link href="/" aria-label="Clinisor — página inicial" className="flex items-center">
-              <Image
-                src="/images/Logo.png"
-                alt="Clinisor"
-                width={160}
-                height={48}
-                style={{ height: "52px", width: "auto" }}
-                priority
-              />
-            </Link>
+          <div className="flex md:hidden items-center justify-center w-full px-3">
+            <div style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              width: "100%", maxWidth: "480px",
+              borderRadius: "2rem",
+              border: "1px solid rgba(255,255,255,0.12)",
+              backgroundColor: "rgba(9,9,11,0.95)",
+              padding: "8px 20px",
+              overflow: "visible",
+            }}>
+              <Link href="/" aria-label="Clinisor — página inicial" className="flex items-center" style={{ overflow: "visible" }}>
+                <Image
+                  src="/images/Logo.png"
+                  alt="Clinisor"
+                  width={180}
+                  height={54}
+                  style={{ height: "64px", width: "auto", marginTop: "-12px", marginBottom: "-12px" }}
+                  priority
+                />
+              </Link>
 
-            <button
-              type="button"
-              onClick={() => setMobileOpen((v) => !v)}
-              className="inline-flex items-center justify-center text-white p-2 rounded-md"
-              aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <XIcon className="size-5" /> : <MenuIcon className="size-5" />}
-            </button>
+              <button
+                type="button"
+                onClick={() => setMobileOpen((v) => !v)}
+                className="inline-flex items-center justify-center text-white rounded-md"
+                style={{ padding: "6px" }}
+                aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <XIcon className="size-7" /> : <MenuIcon className="size-7" />}
+              </button>
+            </div>
           </div>
         </div>
 

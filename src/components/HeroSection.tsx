@@ -269,34 +269,47 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Mobile card */}
-        <div className="mt-10 flex justify-center lg:hidden" aria-hidden="true" style={{ marginBottom: "16px", width: "100%", maxWidth: "360px" }}>
-          <div style={{ ...GLASS, overflow: "hidden", width: "100%" }}>
-            <div style={{ padding: "14px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: `linear-gradient(135deg, ${BRAND_BLUE} 0%, #1d4ed8 100%)`, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
-                <User size={18} strokeWidth={2} />
-              </div>
-              <div>
-                <p style={{ color: "#fff", fontSize: "13px", fontWeight: 700, margin: 0 }}>Assistente do Consultório</p>
-                <p style={{ color: "#22c55e", fontSize: "11px", margin: 0 }}>● online agora</p>
+        {/* Mobile hero — phone + floating cards */}
+        <div className="lg:hidden" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", marginTop: "2.5rem", gap: "1.25rem" }}>
+          {/* Phone + overlapping cards */}
+          <div style={{ position: "relative", width: "58%", maxWidth: "210px" }}>
+            <Image
+              src="/images/mokup_telefone.png"
+              alt="Assistente Clinisor no WhatsApp"
+              width={375}
+              height={780}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              priority
+              unoptimized
+            />
+            {/* Nova paciente — top left overlay */}
+            <div style={{ ...GLASS, position: "absolute", top: "6%", left: "-38%", padding: "8px 10px", zIndex: 10, animation: "heroFloat1 4s ease-in-out infinite", minWidth: "140px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <div style={{ width: "22px", height: "22px", borderRadius: "50%", backgroundColor: "rgba(34,197,94,0.15)", border: "1.5px solid rgba(34,197,94,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#22c55e" }}>
+                  <MessageCircle size={11} strokeWidth={2} />
+                </div>
+                <div>
+                  <p style={{ color: "#fff", fontSize: "10px", fontWeight: 700, margin: 0 }}>Nova paciente</p>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "9px", margin: 0 }}>Ana entrou em contato</p>
+                </div>
               </div>
             </div>
-            <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <div style={{ background: `linear-gradient(135deg, ${BRAND_BLUE} 0%, #2563eb 100%)`, color: "#fff", borderRadius: "14px 14px 2px 14px", padding: "9px 13px", maxWidth: "78%", fontSize: "13px", lineHeight: 1.4 }}>
-                  Olá, quero agendar uma consulta.
-                </div>
-              </div>
-              <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                <div style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.85)", borderRadius: "14px 14px 14px 2px", padding: "9px 13px", maxWidth: "82%", fontSize: "13px", lineHeight: 1.4 }}>
-                  Olá! Posso verificar os horários disponíveis para você?
-                </div>
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <span style={{ backgroundColor: `${BRAND_BLUE}18`, color: BRAND_BLUE, fontSize: "11px", fontWeight: 700, borderRadius: "100vw", padding: "4px 12px" }}>
-                  Respondido em 8 segundos
-                </span>
-              </div>
+            {/* Stats — bottom right overlay */}
+            <div style={{ ...GLASS, position: "absolute", bottom: "14%", right: "-38%", padding: "10px 12px", zIndex: 10, animation: "heroFloat2 3.5s ease-in-out 0.5s infinite" }}>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "8px", margin: "0 0 2px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Agendamentos</p>
+              <p style={{ color: "#fff", fontSize: "20px", fontWeight: 800, margin: 0, lineHeight: 1 }}>+38%</p>
+              <p style={{ color: "#22c55e", fontSize: "9px", margin: "2px 0 0 0" }}>↑ este mês</p>
+            </div>
+          </div>
+
+          {/* Consulta agendada card below phone */}
+          <div style={{ ...GLASS, width: "100%", maxWidth: "320px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "10px" }}>
+            <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: `${BRAND_BLUE}18`, border: `1.5px solid ${BRAND_BLUE}40`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: BRAND_BLUE }}>
+              <CalendarCheck size={14} strokeWidth={2} />
+            </div>
+            <div>
+              <p style={{ color: "#fff", fontSize: "12px", fontWeight: 700, margin: 0 }}>Consulta agendada</p>
+              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "10.5px", margin: 0 }}>Ter, 24/06 às 10h · confirmada ✓</p>
             </div>
           </div>
         </div>
