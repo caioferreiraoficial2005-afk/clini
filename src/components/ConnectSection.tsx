@@ -134,11 +134,12 @@ export function ConnectSection() {
             href={CTA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="md:hidden flex items-center justify-center font-bold"
+            className="md:hidden inline-flex items-center justify-center font-bold"
             style={{
               gridColumn: "1 / -1",
+              justifySelf: "center",
               backgroundColor: "#fff", color: "#09090b",
-              borderRadius: "100vw", padding: "10px 22px",
+              borderRadius: "100vw", padding: "10px 28px",
               fontSize: "0.875rem", textDecoration: "none",
               marginTop: "1.5rem",
             }}

@@ -67,7 +67,7 @@ export function HeroSection() {
       className="relative w-full overflow-hidden"
     >
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
-        <div style={{ paddingTop: "220px" }} />
+        <div className="pt-[140px] lg:pt-[220px]" />
 
         <h1
           className="font-bold text-white text-center"

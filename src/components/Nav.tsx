@@ -31,7 +31,7 @@ export function Nav() {
 
       <header
         className="fixed inset-x-0 top-0 z-50 flex h-[7rem] items-start md:bg-[#09090b]"
-        style={{ overflow: "visible", paddingTop: "22px" }}
+        style={{ overflow: "visible", paddingTop: "36px" }}
       >
         <div className="mx-auto w-full max-w-screen-xl px-4">
           {/* Desktop pill nav */}
@@ -52,7 +52,7 @@ export function Nav() {
                 alt="Clinisor"
                 width={200}
                 height={60}
-                style={{ height: "96px", width: "auto", marginTop: "-22px", marginBottom: "-22px" }}
+                style={{ height: "114px", width: "auto", marginTop: "-26px", marginBottom: "-26px" }}
                 priority
               />
             </Link>
@@ -111,7 +111,7 @@ export function Nav() {
                   alt="Clinisor"
                   width={180}
                   height={54}
-                  style={{ height: "64px", width: "auto", marginTop: "-12px", marginBottom: "-12px" }}
+                  style={{ height: "80px", width: "auto", marginTop: "-18px", marginBottom: "-18px" }}
                   priority
                 />
               </Link>
