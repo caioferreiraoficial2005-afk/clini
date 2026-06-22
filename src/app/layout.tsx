@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     description: "Instalamos um assistente de IA no WhatsApp do seu consultório. Ele atende pacientes, faz agendamentos e converte leads — 24 horas por dia, 7 dias por semana.",
   },
   icons: {
-    icon: "/seo/favicon.png",
-    apple: "/seo/apple-touch-icon.png",
+    icon: "/images/Logo_icone.png",
+    apple: "/images/Logo_icone.png",
   },
 };
 

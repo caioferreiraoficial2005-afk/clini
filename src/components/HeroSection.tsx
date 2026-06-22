@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { useEffect, useRef } from "react"
 import { User, CalendarCheck, TrendingUp, CheckCircle2, Clock, MessageCircle } from "lucide-react"
 
 const BRAND_BLUE = "#3b82f6"
@@ -58,6 +59,29 @@ function MiniBarChart() {
 }
 
 export function HeroSection() {
+  const desktopVisualRef = useRef<HTMLDivElement>(null)
+  const mobileVisualRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observe = (el: HTMLElement | null) => {
+      if (!el) return
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add("is-visible")
+            observer.unobserve(el)
+          }
+        },
+        { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
+      )
+      observer.observe(el)
+      return () => observer.disconnect()
+    }
+    const cleanA = observe(desktopVisualRef.current)
+    const cleanB = observe(mobileVisualRef.current)
+    return () => { cleanA?.(); cleanB?.() }
+  }, [])
+
   return (
     <section
       id="main-content"
@@ -66,7 +90,7 @@ export function HeroSection() {
       className="relative w-full overflow-hidden"
     >
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
-        <div style={{ paddingTop: "176px" }} />
+        <div style={{ paddingTop: "220px" }} />
 
         <h1
           className="font-bold text-white text-center"
@@ -76,6 +100,7 @@ export function HeroSection() {
             lineHeight: 1.1,
             maxWidth: "780px",
             letterSpacing: "-0.02em",
+            animation: "fadeUp 0.8s ease-out both 0.1s",
           }}
         >
           Seu consultório no piloto automático
@@ -88,6 +113,7 @@ export function HeroSection() {
             maxWidth: "540px",
             marginTop: "18px",
             lineHeight: 1.65,
+            animation: "fadeUp 0.8s ease-out both 0.28s",
           }}
         >
           Instalamos um assistente de IA no WhatsApp do consultório de psicólogos.
@@ -107,6 +133,7 @@ export function HeroSection() {
             fontSize: "0.9375rem",
             marginTop: "28px",
             textDecoration: "none",
+            animation: "fadeUp 0.8s ease-out both 0.46s",
           }}
           onMouseEnter={(e) => { ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = BRAND_BLUE_HOVER }}
           onMouseLeave={(e) => { ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = BRAND_BLUE }}
@@ -114,13 +141,14 @@ export function HeroSection() {
           Agendar diagnóstico gratuito
         </a>
 
-        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", marginTop: "10px" }}>
+        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", marginTop: "10px", animation: "fadeUp 0.8s ease-out both 0.58s" }}>
           30 minutos · Gratuito · Sem compromisso
         </p>
 
         {/* ── HERO VISUAL (desktop) ── */}
         <div
-          className="relative mx-auto mt-14 hidden lg:block"
+          ref={desktopVisualRef}
+          className="scroll-reveal relative mx-auto mt-14 hidden lg:block"
           style={{ width: "100%", maxWidth: "1040px", height: "860px" }}
           aria-hidden="true"
         >
@@ -135,7 +163,7 @@ export function HeroSection() {
               ...GLASS,
               position: "absolute",
               top: "10%",
-              left: "0%",
+              left: "12%",
               zIndex: 20,
               padding: "0",
               width: "290px",
@@ -207,7 +235,7 @@ export function HeroSection() {
               ...GLASS,
               position: "absolute",
               bottom: "4%",
-              right: "0%",
+              right: "12%",
               zIndex: 20,
               padding: "0",
               width: "296px",
@@ -270,7 +298,7 @@ export function HeroSection() {
         </div>
 
         {/* Mobile hero — phone + floating cards */}
-        <div className="lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem" }}>
+        <div ref={mobileVisualRef} className="scroll-reveal lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem" }}>
           {/* Phone + overlapping cards */}
           <div style={{ position: "relative", width: "115%", maxWidth: "520px" }}>
             <Image

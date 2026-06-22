@@ -8,6 +8,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { PressSection } from "@/components/PressSection";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -15,15 +16,15 @@ export default function Home() {
       <Nav />
       <main id="main-content">
         <HeroSection />
-        <ConnectSection />
-        <FeaturesSection />
-        <SecuritySection />
-        <PressSection />
-        <PricingSection />
-        <FaqSection />
-        <CtaSection />
+        <ScrollReveal><ConnectSection /></ScrollReveal>
+        <ScrollReveal delay={80}><FeaturesSection /></ScrollReveal>
+        <ScrollReveal delay={80}><SecuritySection /></ScrollReveal>
+        <ScrollReveal delay={80}><PressSection /></ScrollReveal>
+        <ScrollReveal delay={80}><PricingSection /></ScrollReveal>
+        <ScrollReveal delay={80}><FaqSection /></ScrollReveal>
+        <ScrollReveal delay={80}><CtaSection /></ScrollReveal>
       </main>
-      <Footer />
+      <ScrollReveal delay={80}><Footer /></ScrollReveal>
     </div>
   );
 }
