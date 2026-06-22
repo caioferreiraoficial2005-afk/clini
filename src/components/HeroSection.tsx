@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useRef } from "react"
 import { User, CalendarCheck, TrendingUp, CheckCircle2, Clock, MessageCircle } from "lucide-react"
 
 const BRAND_BLUE = "#3b82f6"
@@ -59,28 +58,6 @@ function MiniBarChart() {
 }
 
 export function HeroSection() {
-  const desktopVisualRef = useRef<HTMLDivElement>(null)
-  const mobileVisualRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observe = (el: HTMLElement | null) => {
-      if (!el) return
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.classList.add("is-visible")
-            observer.unobserve(el)
-          }
-        },
-        { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
-      )
-      observer.observe(el)
-      return () => observer.disconnect()
-    }
-    const cleanA = observe(desktopVisualRef.current)
-    const cleanB = observe(mobileVisualRef.current)
-    return () => { cleanA?.(); cleanB?.() }
-  }, [])
 
   return (
     <section
@@ -147,9 +124,8 @@ export function HeroSection() {
 
         {/* ── HERO VISUAL (desktop) ── */}
         <div
-          ref={desktopVisualRef}
-          className="scroll-reveal relative mx-auto mt-14 hidden lg:block"
-          style={{ width: "100%", maxWidth: "1040px", height: "860px" }}
+          className="relative mx-auto mt-14 hidden lg:block"
+          style={{ width: "100%", maxWidth: "1040px", height: "860px", animation: "fadeIn 0.9s ease-out both 0.65s" }}
           aria-hidden="true"
         >
           {/* Glow behind phone */}
@@ -162,8 +138,8 @@ export function HeroSection() {
             style={{
               ...GLASS,
               position: "absolute",
-              top: "10%",
-              left: "12%",
+              top: "18%",
+              left: "0%",
               zIndex: 20,
               padding: "0",
               width: "290px",
@@ -235,7 +211,7 @@ export function HeroSection() {
               ...GLASS,
               position: "absolute",
               bottom: "4%",
-              right: "12%",
+              right: "4%",
               zIndex: 20,
               padding: "0",
               width: "296px",
@@ -298,7 +274,7 @@ export function HeroSection() {
         </div>
 
         {/* Mobile hero — phone + floating cards */}
-        <div ref={mobileVisualRef} className="scroll-reveal lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem" }}>
+        <div className="lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem", animation: "fadeIn 0.9s ease-out both 0.65s" }}>
           {/* Phone + overlapping cards */}
           <div style={{ position: "relative", width: "115%", maxWidth: "520px" }}>
             <Image
