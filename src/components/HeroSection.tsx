@@ -62,10 +62,6 @@ export function HeroSection() {
   const [heroVisible, setHeroVisible] = useState(false)
 
   useEffect(() => {
-    if (window.scrollY > 0) {
-      setHeroVisible(true)
-      return
-    }
     const onScroll = () => {
       setHeroVisible(true)
       window.removeEventListener("scroll", onScroll)
