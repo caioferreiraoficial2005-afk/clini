@@ -33,6 +33,8 @@ export function FeaturesSection() {
         >
           {/* Image left */}
           <div style={{ position: "relative" }}>
+            {/* Blue glow behind image */}
+            <div style={{ position: "absolute", inset: "-14%", background: "radial-gradient(ellipse at center, rgba(59,130,246,0.22) 0%, rgba(59,130,246,0.07) 50%, transparent 72%)", filter: "blur(52px)", borderRadius: "50%", pointerEvents: "none" }} />
             <div className="section-image-left" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
                 src="/images/modo_paciente.jpg"
@@ -174,6 +176,8 @@ export function FeaturesSection() {
 
           {/* Image right */}
           <div style={{ position: "relative" }}>
+            {/* Blue glow behind image */}
+            <div style={{ position: "absolute", inset: "-14%", background: "radial-gradient(ellipse at center, rgba(59,130,246,0.22) 0%, rgba(59,130,246,0.07) 50%, transparent 72%)", filter: "blur(52px)", borderRadius: "50%", pointerEvents: "none" }} />
             <div className="section-image-right" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
                 src="/images/modo_psicologo.jpg"

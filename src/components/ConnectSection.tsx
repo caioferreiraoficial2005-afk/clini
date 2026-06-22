@@ -78,6 +78,8 @@ export function ConnectSection() {
 
           {/* Right: image + glass card */}
           <div style={{ position: "relative" }}>
+            {/* Blue glow behind image */}
+            <div style={{ position: "absolute", inset: "-14%", background: "radial-gradient(ellipse at center, rgba(59,130,246,0.22) 0%, rgba(59,130,246,0.07) 50%, transparent 72%)", filter: "blur(52px)", borderRadius: "50%", pointerEvents: "none" }} />
             {/* Image — square, very rounded */}
             <div className="section-image-right" style={{ borderRadius: "2.25rem", overflow: "hidden", aspectRatio: "1/1", position: "relative", maxWidth: "480px", marginInline: "auto" }}>
               <Image
