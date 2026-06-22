@@ -1,7 +1,8 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { User, CalendarCheck, TrendingUp, CheckCircle2, Clock, MessageCircle } from "lucide-react"
+import { User, CalendarCheck, TrendingUp, CheckCircle2, MessageCircle } from "lucide-react"
 
 const BRAND_BLUE = "#3b82f6"
 const BRAND_BLUE_HOVER = "#2563eb"
@@ -58,6 +59,25 @@ function MiniBarChart() {
 }
 
 export function HeroSection() {
+  const [heroVisible, setHeroVisible] = useState(false)
+
+  useEffect(() => {
+    if (window.scrollY > 0) {
+      setHeroVisible(true)
+      return
+    }
+    const onScroll = () => {
+      setHeroVisible(true)
+      window.removeEventListener("scroll", onScroll)
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const show = (enterAnim: string, delay = 0) =>
+    heroVisible
+      ? { animation: `${enterAnim} 0.6s ease-out ${delay}s both` }
+      : { opacity: 0 as number }
 
   return (
     <section
@@ -125,13 +145,13 @@ export function HeroSection() {
         {/* ── HERO VISUAL (desktop) ── */}
         <div
           className="relative mx-auto mt-14 hidden lg:block"
-          style={{ width: "100%", maxWidth: "1040px", height: "860px", animation: "fadeIn 0.9s ease-out both 0.65s" }}
+          style={{ width: "100%", maxWidth: "1040px", height: "860px" }}
           aria-hidden="true"
         >
           {/* Glow behind phone */}
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -52%)", width: "420px", height: "640px", borderRadius: "50%", background: `radial-gradient(ellipse, ${BRAND_BLUE}28 0%, ${BRAND_BLUE}0a 50%, transparent 72%)`, pointerEvents: "none", zIndex: 5, filter: "blur(24px)" }} />
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -52%)", width: "420px", height: "640px", borderRadius: "50%", background: `radial-gradient(ellipse, ${BRAND_BLUE}28 0%, ${BRAND_BLUE}0a 50%, transparent 72%)`, pointerEvents: "none", zIndex: 5, filter: "blur(24px)", ...show("fadeIn") }} />
           {/* Outer ambient glow */}
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "620px", height: "620px", borderRadius: "50%", background: `radial-gradient(circle, ${BRAND_BLUE}0c 0%, transparent 65%)`, pointerEvents: "none", zIndex: 0 }} />
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "620px", height: "620px", borderRadius: "50%", background: `radial-gradient(circle, ${BRAND_BLUE}0c 0%, transparent 65%)`, pointerEvents: "none", zIndex: 0, ...show("fadeIn") }} />
 
           {/* ── Card 1: Agenda de hoje (LEFT, large) ── */}
           <div
@@ -143,10 +163,11 @@ export function HeroSection() {
               zIndex: 20,
               padding: "0",
               width: "290px",
-              animation: "fadeIn 0.5s ease-out 0.3s both, heroFloat1 4.5s ease-in-out 0.8s infinite",
+              ...(heroVisible
+                ? { animation: "heroSlideFromLeft 0.6s ease-out both, heroFloat1 4.5s ease-in-out 0.7s infinite" }
+                : { opacity: 0 }),
             }}
           >
-            {/* Card header */}
             <div style={{ padding: "14px 18px 12px", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <CalendarCheck size={14} color={BRAND_BLUE} strokeWidth={2} />
@@ -154,8 +175,6 @@ export function HeroSection() {
               </div>
               <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "10px" }}>21 jun</span>
             </div>
-
-            {/* Appointment rows */}
             <div style={{ padding: "10px 18px 14px", display: "flex", flexDirection: "column", gap: "10px" }}>
               {APPOINTMENTS.map((apt) => (
                 <div key={apt.name} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
@@ -172,8 +191,6 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
-
-            {/* Card footer */}
             <div style={{ padding: "10px 18px", borderTop: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", gap: "6px" }}>
               <CheckCircle2 size={11} color="#22c55e" strokeWidth={2} />
               <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>3 consultas · 0 sem resposta</span>
@@ -190,7 +207,9 @@ export function HeroSection() {
               zIndex: 20,
               padding: "12px 16px",
               width: "256px",
-              animation: "fadeIn 0.5s ease-out 0.55s both, heroFloat2 3.8s ease-in-out 1.2s infinite",
+              ...(heroVisible
+                ? { animation: "heroSlideFromLeft 0.6s ease-out 0.1s both, heroFloat2 3.8s ease-in-out 0.8s infinite" }
+                : { opacity: 0 }),
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -215,10 +234,11 @@ export function HeroSection() {
               zIndex: 20,
               padding: "0",
               width: "296px",
-              animation: "fadeIn 0.5s ease-out 0.75s both, heroFloat3 5s ease-in-out 1.3s infinite",
+              ...(heroVisible
+                ? { animation: "heroSlideFromRight 0.6s ease-out 0.2s both, heroFloat3 5s ease-in-out 0.9s infinite" }
+                : { opacity: 0 }),
             }}
           >
-            {/* Header */}
             <div style={{ padding: "14px 18px 12px", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <TrendingUp size={14} color={BRAND_BLUE} strokeWidth={2} />
@@ -226,14 +246,10 @@ export function HeroSection() {
               </div>
               <span style={{ backgroundColor: "rgba(34,197,94,0.15)", color: "#22c55e", fontSize: "9.5px", fontWeight: 700, borderRadius: "6px", padding: "3px 8px" }}>↑ este mês</span>
             </div>
-
-            {/* Main stat */}
             <div style={{ padding: "14px 18px 10px" }}>
               <p style={{ color: "#fff", fontSize: "32px", fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-0.02em" }}>+38%</p>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "10.5px", margin: "4px 0 0 0" }}>mais agendamentos que no mês anterior</p>
             </div>
-
-            {/* Metrics row */}
             <div style={{ padding: "10px 18px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", borderTop: "1px solid rgba(255,255,255,0.07)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "3px" }}>
@@ -252,8 +268,6 @@ export function HeroSection() {
                 <p style={{ color: "#22c55e", fontSize: "9.5px", margin: "2px 0 0 0" }}>↑ 29%</p>
               </div>
             </div>
-
-            {/* Chart */}
             <div style={{ padding: "12px 18px 14px" }}>
               <MiniBarChart />
             </div>
@@ -261,33 +275,35 @@ export function HeroSection() {
 
           {/* ── Phone mockup image ── */}
           <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", zIndex: 10 }}>
-            <Image
-              src="/images/mokup_telefone.png"
-              alt="Assistente de IA no WhatsApp do consultório"
-              width={375}
-              height={780}
-              style={{ height: "780px", width: "auto", display: "block", maxWidth: "none" }}
-              priority
-              unoptimized
-            />
+            <div style={heroVisible ? { animation: "heroSlideUp 0.9s ease-out both" } : { opacity: 0 }}>
+              <Image
+                src="/images/mokup_telefone.png"
+                alt="Assistente de IA no WhatsApp do consultório"
+                width={375}
+                height={780}
+                style={{ height: "780px", width: "auto", display: "block", maxWidth: "none" }}
+                priority
+                unoptimized
+              />
+            </div>
           </div>
         </div>
 
         {/* Mobile hero — phone + floating cards */}
-        <div className="lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem", animation: "fadeIn 0.9s ease-out both 0.65s" }}>
-          {/* Phone + overlapping cards */}
+        <div className="lg:hidden flex flex-col items-center" style={{ width: "100%", marginTop: "2.5rem", gap: "1.25rem" }}>
           <div style={{ position: "relative", width: "115%", maxWidth: "520px" }}>
             <Image
               src="/images/mokup_telefone.png"
               alt="Assistente Clinisor no WhatsApp"
               width={375}
               height={780}
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ width: "100%", height: "auto", display: "block", ...(heroVisible ? { animation: "heroSlideUp 0.9s ease-out both" } : { opacity: 0 }) }}
               priority
               unoptimized
             />
-            {/* Nova paciente — top left overlay */}
-            <div style={{ ...GLASS, position: "absolute", top: "6%", left: "4%", padding: "8px 10px", zIndex: 10, animation: "heroFloat1 4s ease-in-out infinite", minWidth: "140px" }}>
+
+            {/* Nova paciente — top left */}
+            <div style={{ ...GLASS, position: "absolute", top: "6%", left: "4%", padding: "8px 10px", zIndex: 10, minWidth: "140px", ...(heroVisible ? { animation: "heroSlideFromLeft 0.5s ease-out 0.15s both, heroFloat1 4s ease-in-out 0.75s infinite" } : { opacity: 0 }) }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                 <div style={{ width: "22px", height: "22px", borderRadius: "50%", backgroundColor: "rgba(34,197,94,0.15)", border: "1.5px solid rgba(34,197,94,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#22c55e" }}>
                   <MessageCircle size={11} strokeWidth={2} />
@@ -298,15 +314,16 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-            {/* Stats — top right */}
-            <div style={{ ...GLASS, position: "absolute", bottom: "24%", right: "4%", padding: "10px 12px", zIndex: 10, animation: "heroFloat2 3.5s ease-in-out 0.5s infinite" }}>
+
+            {/* Stats — bottom right */}
+            <div style={{ ...GLASS, position: "absolute", bottom: "24%", right: "4%", padding: "10px 12px", zIndex: 10, ...(heroVisible ? { animation: "heroSlideFromRight 0.5s ease-out 0.25s both, heroFloat2 3.5s ease-in-out 0.85s infinite" } : { opacity: 0 }) }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "8px", margin: "0 0 2px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Agendamentos</p>
               <p style={{ color: "#fff", fontSize: "20px", fontWeight: 800, margin: 0, lineHeight: 1 }}>+38%</p>
               <p style={{ color: "#22c55e", fontSize: "9px", margin: "2px 0 0 0" }}>↑ este mês</p>
             </div>
 
             {/* Crescimento — bottom left */}
-            <div style={{ ...GLASS, position: "absolute", bottom: "5%", left: "2%", padding: "0", zIndex: 10, width: "158px", animation: "heroFloat3 5s ease-in-out 0.8s infinite" }}>
+            <div style={{ ...GLASS, position: "absolute", bottom: "5%", left: "5%", padding: "0", zIndex: 10, width: "158px", ...(heroVisible ? { animation: "heroSlideFromLeft 0.5s ease-out 0.35s both, heroFloat3 5s ease-in-out 0.95s infinite" } : { opacity: 0 }) }}>
               <div style={{ padding: "8px 10px 7px", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                   <TrendingUp size={10} color={BRAND_BLUE} strokeWidth={2} />
@@ -332,7 +349,6 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-
         </div>
 
         <div style={{ paddingBottom: "60px" }} />
