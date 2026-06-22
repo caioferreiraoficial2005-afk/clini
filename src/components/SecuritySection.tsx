@@ -10,7 +10,7 @@ const DIFF_CARDS = [
   },
   {
     Icon: Zap,
-    title: "No ar em até 7 dias",
+    title: "No ar em até 24 horas",
     description: "Instalamos, configuramos, testamos e colocamos no ar. Você aprova as respostas antes de qualquer paciente receber.",
   },
   {

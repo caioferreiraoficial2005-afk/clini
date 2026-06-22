@@ -147,7 +147,7 @@ export function PricingSection() {
               margin: "0 0 0.5rem 0",
             }}
           >
-            Setup gratuito · Pix ou cartão de crédito
+            Setup gratuito · pronto em até 24h · Pix ou cartão de crédito
           </p>
 
           {/* Description */}

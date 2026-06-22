@@ -27,7 +27,7 @@ const ROWS = [
   { label: "Horário de atendimento",  secretary: "8h/dia · 5 dias/semana",    clinisor: "24h/dia · 7 dias/semana"   },
   { label: "Tempo de resposta",       secretary: "Minutos ou horas",          clinisor: "Menos de 30 segundos"      },
   { label: "Férias e ausências",      secretary: "Sim",                       clinisor: "Nunca"                     },
-  { label: "Setup",                   secretary: "Semanas de processo CLT",   clinisor: "Gratuito · em até 7 dias"  },
+  { label: "Setup",                   secretary: "Semanas de processo CLT",   clinisor: "Gratuito · em até 24 horas"  },
   { label: "Cancelamento",            secretary: "Multa + aviso prévio",      clinisor: "30 dias de aviso · sem multa" },
 ]
 

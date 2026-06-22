@@ -8,7 +8,7 @@ const STEPS = [
   { number: "1", title: "Diagnóstico gratuito", description: "30 min para entender seu consultório, seu paciente e o que o agente precisa saber." },
   { number: "2", title: "Onboarding personalizado", description: "Tom de voz, fluxo de atendimento e informações do seu consultório." },
   { number: "3", title: "Configuração e testes", description: "Você aprova as respostas antes de ir ao ar." },
-  { number: "4", title: "No ar em até 7 dias", description: "WhatsApp funcionando 24h, com suporte e ajustes mensais incluídos." },
+  { number: "4", title: "No ar em até 24 horas", description: "WhatsApp funcionando 24h, com suporte e ajustes mensais incluídos." },
 ]
 
 const GLASS: React.CSSProperties = {
@@ -45,7 +45,7 @@ export function ConnectSection() {
               Instalamos tudo.<br />Você só atende.
             </h2>
             <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "0 0 2.5rem 0", maxWidth: "400px" }}>
-              Do diagnóstico ao WhatsApp funcionando em até 7 dias. Sem você precisar entender nada de tecnologia.
+              Do diagnóstico ao WhatsApp funcionando em até 24 horas. Sem você precisar entender nada de tecnologia.
             </p>
 
             {/* Compact step list */}

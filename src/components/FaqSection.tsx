@@ -16,7 +16,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Em quanto tempo começa a funcionar?",
     answer:
-      "Em até 7 dias úteis após o fechamento. O processo é: diagnóstico gratuito → contrato → onboarding de 1 hora → configuração → testes → você aprova → entrega. Rápido, sem burocracia.",
+      "Em até 24 horas após o fechamento. O processo é: diagnóstico gratuito → contrato → onboarding de 1 hora → configuração → testes → você aprova → entrega. Rápido, sem burocracia.",
   },
   {
     question: "O agente pode fazer besteira e afastar um paciente?",
