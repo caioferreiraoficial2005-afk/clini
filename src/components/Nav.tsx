@@ -52,7 +52,7 @@ export function Nav() {
                 alt="Clinisor"
                 width={200}
                 height={60}
-                style={{ height: "114px", width: "auto", marginTop: "-26px", marginBottom: "-26px" }}
+                style={{ height: "114px", width: "auto", marginTop: "-20px", marginBottom: "-26px" }}
                 priority
               />
             </Link>
@@ -111,7 +111,7 @@ export function Nav() {
                   alt="Clinisor"
                   width={180}
                   height={54}
-                  style={{ height: "80px", width: "auto", marginTop: "-18px", marginBottom: "-18px" }}
+                  style={{ height: "80px", width: "auto", marginTop: "-12px", marginBottom: "-18px" }}
                   priority
                 />
               </Link>

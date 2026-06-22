@@ -211,7 +211,7 @@ export function HeroSection() {
               ...GLASS,
               position: "absolute",
               bottom: "4%",
-              right: "4%",
+              right: "0%",
               zIndex: 20,
               padding: "0",
               width: "296px",
@@ -298,11 +298,38 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-            {/* Stats — moved up */}
+            {/* Stats — top right */}
             <div style={{ ...GLASS, position: "absolute", bottom: "24%", right: "4%", padding: "10px 12px", zIndex: 10, animation: "heroFloat2 3.5s ease-in-out 0.5s infinite" }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "8px", margin: "0 0 2px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Agendamentos</p>
               <p style={{ color: "#fff", fontSize: "20px", fontWeight: 800, margin: 0, lineHeight: 1 }}>+38%</p>
               <p style={{ color: "#22c55e", fontSize: "9px", margin: "2px 0 0 0" }}>↑ este mês</p>
+            </div>
+
+            {/* Crescimento — bottom left */}
+            <div style={{ ...GLASS, position: "absolute", bottom: "5%", left: "2%", padding: "0", zIndex: 10, width: "158px", animation: "heroFloat3 5s ease-in-out 0.8s infinite" }}>
+              <div style={{ padding: "8px 10px 7px", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                  <TrendingUp size={10} color={BRAND_BLUE} strokeWidth={2} />
+                  <span style={{ color: "#fff", fontSize: "10px", fontWeight: 700 }}>Crescimento</span>
+                </div>
+                <span style={{ backgroundColor: "rgba(34,197,94,0.15)", color: "#22c55e", fontSize: "8px", fontWeight: 700, borderRadius: "4px", padding: "2px 5px" }}>↑ mês</span>
+              </div>
+              <div style={{ padding: "7px 10px 5px" }}>
+                <p style={{ color: "#fff", fontSize: "22px", fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-0.02em" }}>+38%</p>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "8.5px", margin: "2px 0 0 0" }}>mais agendamentos</p>
+              </div>
+              <div style={{ padding: "6px 10px 8px", borderTop: "1px solid rgba(255,255,255,0.07)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                <div>
+                  <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "8px", margin: "0 0 1px 0", textTransform: "uppercase" as const, letterSpacing: "0.04em" }}>Pacientes</p>
+                  <p style={{ color: "#fff", fontSize: "13px", fontWeight: 700, margin: 0, lineHeight: 1 }}>34</p>
+                  <p style={{ color: "#22c55e", fontSize: "8px", margin: "1px 0 0 0" }}>↑ 11 novos</p>
+                </div>
+                <div>
+                  <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "8px", margin: "0 0 1px 0", textTransform: "uppercase" as const, letterSpacing: "0.04em" }}>Faturamento</p>
+                  <p style={{ color: "#fff", fontSize: "13px", fontWeight: 700, margin: 0, lineHeight: 1 }}>R$11.7k</p>
+                  <p style={{ color: "#22c55e", fontSize: "8px", margin: "1px 0 0 0" }}>↑ 29%</p>
+                </div>
+              </div>
             </div>
           </div>
 
